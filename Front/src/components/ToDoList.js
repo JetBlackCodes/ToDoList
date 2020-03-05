@@ -9,13 +9,15 @@ export default function ToDoList() {
     useEffect(() => getDataFromServer(), []);
 
     const getDataFromServer = async () => {
-        const {data} = await GetData;
+        const data = await GetData();
         setList(data);
     };
 
     return (
-        list.map(({id, header, text, isCompleted}) => (
-            <ToDo key={id} header={header} text={text} isCompleted={isCompleted}/>
-        ))
+        <>
+            {list.map(({id, header, text, isCompleted}) => (
+                <ToDo key={id} header={header} text={text} isCompleted={isCompleted}/>
+            ))}
+        </>
     );
 };

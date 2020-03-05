@@ -1,8 +1,10 @@
 import React from "react";
 import axios from "axios"
 
+const URL = "http://localhost:4000";
+
 export const GetData = () => {
-    return axios.get('/getData')
+    return axios.get(`${URL}/getData`)
         .catch(function (error) {
             console.log(error);
         })
