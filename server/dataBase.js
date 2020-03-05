@@ -1,20 +1,22 @@
-import {DEFAULT_TODO_MODEL} from "./model";
+import {DEFAULT_TODO_MODEL, TODOLIST_TEST_DATA} from "./model";
 import {getIndexById, getItemById} from "./utils";
 
-let todoList = [];
+let todoList = TODOLIST_TEST_DATA;
 
 export const GetData = () => {
     return todoList;
 };
 
 export const AddItem = (header, text) => {
+    const id = Symbol();
     const newItem = {
         ...DEFAULT_TODO_MODEL,
-        id: Symbol(),
+        id: id,
         header: header,
         text: text
     };
     todoList.push(newItem);
+    return id;
 };
 
 export const ChangeItem = (id, ...rest) => {

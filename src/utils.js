@@ -14,7 +14,7 @@ export const GetData = () => {
 export const AddItem = () => {
     axios.post('/addItem', {
         header: 'shopping',
-        text: 'buy tomatos, cucumbers and chips'
+        text: 'buy tomatoes, cucumbers and chips'
     })
         .then(function (response) {
             console.log(response);

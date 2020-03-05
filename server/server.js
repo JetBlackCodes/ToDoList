@@ -1,20 +1,20 @@
-import {DEFAULT_TODO_MODEL} from "./model"
-import {} from "./model"
+import {GetData, AddItem, ChangeItem, DeleteItem} from "./dataBase"
 const app = require("express")();
 
 app.get("/getData", function (req, res) {
-    res.send(JSON.stringify(todoList))
+    const data = GetData();
+    res.send(JSON.stringify(data))
 });
 
 app.post("/addItem", function (req, res) {
-
-    res.send(JSON.stringify(todoList))
+    const newItemIndex = AddItem(req.data.header, req.data.text);
+    res.send(JSON.stringify(newItemIndex));
 });
 
 app.post("/changeItem", function (req, res) {
-    res.send(JSON.stringify(todoList))
+    ChangeItem(req.data.id, req.data);
 });
 
 app.post("/deleteItem", function (req, res) {
-    res.send(JSON.stringify(todoList))
+    DeleteItem(req.data.id);
 });

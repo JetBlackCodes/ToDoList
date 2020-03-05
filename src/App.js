@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import ToDo from "./components/ToDo";
-import Lab2 from "./utils";
-import Switch from "@material-ui/core/Switch";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 class App extends Component {
   state = {
