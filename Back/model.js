@@ -7,19 +7,19 @@ export const DEFAULT_TODO_MODEL = {
 
 export const TODOLIST_TEST_DATA = [
     {
-        id: Symbol(),
+        id: 1,
         header: "shopping",
         text: "buy tomatoes, cucumbers and chips",
         isCompleted: false
     },
     {
-        id: Symbol(),
+        id: 2,
         header: "shopping",
         text: "buy tomatoes, cucumbers and chips",
         isCompleted: true
     },
     {
-        id: Symbol(),
+        id: 3,
         header: "shopping",
         text: "buy tomatoes, cucumbers and chips",
         isCompleted: true
