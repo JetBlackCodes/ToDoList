@@ -8,8 +8,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-export default
-const ToDo = (header, text) => {
+export const ToDo = (header, text, isCompleted) => {
     return (
         <ExpansionPanel>
             <ExpansionPanelSummary
@@ -18,18 +17,15 @@ const ToDo = (header, text) => {
                 <FormControlLabel
                     onClick={event => event.stopPropagation()}
                     onFocus={event => event.stopPropagation()}
-                    control={<Checkbox/>}
+                    control={<Checkbox checked={isCompleted}/>}
                     label={header}
                 />
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
                 <Typography color="textSecondary">
-                  {text}
+                    {text}
                 </Typography>
             </ExpansionPanelDetails>
         </ExpansionPanel>
     );
-
-}
-
-export default ToDo;
+};

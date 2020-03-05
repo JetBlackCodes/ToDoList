@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ToDo from "./components/ToDo";
+import ToDoList from "./components/ToDoList";
 
 class App extends Component {
   state = {
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ToDo text="hello" header="open me" />
+        <ToDoList />
       </div>
     );
   }

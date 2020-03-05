@@ -2,10 +2,7 @@ import React from "react";
 import axios from "axios"
 
 export const GetData = () => {
-    axios.get('/getData')
-        .then(function (response) {
-
-        })
+    return axios.get('/getData')
         .catch(function (error) {
             console.log(error);
         })
