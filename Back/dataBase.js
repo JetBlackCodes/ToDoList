@@ -7,13 +7,12 @@ export const GetData = () => {
     return todoList;
 };
 
-export const AddItem = (header, text) => {
+export const AddItem = (header) => {
     const id = Symbol();
     const newItem = {
         ...DEFAULT_TODO_MODEL,
         id: id,
-        header: header,
-        text: text
+        header: header
     };
     todoList.push(newItem);
     return id;

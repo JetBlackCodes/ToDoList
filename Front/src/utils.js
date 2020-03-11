@@ -4,27 +4,23 @@ import axios from "axios"
 const URL = "http://localhost:4000";
 
 export const GetData = () => {
-    return axios.get(`${URL}/getData`)
+    return axios.get(`${URL}/items`)
         .catch(function (error) {
             console.log(error);
         })
 };
 
-export const AddItem = () => {
-    axios.post('/addItem', {
-        header: 'shopping',
-        text: 'buy tomatoes, cucumbers and chips'
+export const AddItem = (itemHeader) => {
+    return axios.post(`${URL}/item`, {
+        itemHeader: itemHeader
     })
-        .then(function (response) {
-            console.log(response);
-        })
         .catch(function (error) {
             console.log(error);
         });
 };
 
 export const ChangeItem = () => {
-    axios.post('/changeItem', {
+    axios.put(`${URL}/item`, {
         id: "123",
         header: 'shopping',
         text: 'buy tomatos, cucumbers and chips'
@@ -38,7 +34,7 @@ export const ChangeItem = () => {
 };
 
 export const DeleteItem = () => {
-    axios.post('/deleteItem', {
+    axios.delete(`${URL}/item`, {
         id: "123"
     })
         .then(function (response) {
